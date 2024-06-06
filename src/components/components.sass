@@ -1,0 +1,205 @@
+@import "../styles/global"
+
+.header, .sidebar, .navbar
+    background-color: $Secondary-clr
+    box-shadow: $Box-shadow
+
+// === HEADER ===
+.header
+    width: 1366px
+    min-width: 1066px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 40px
+    height: 65px
+    margin-bottom: 15px
+    position: sticky
+    top: 0
+    z-index: 5
+
+    &-logo
+        img
+            width: 130px
+            cursor: pointer
+    &-search
+        position: relative
+        // width: 30%
+        svg
+            scale: 1.5
+            position: absolute
+            top: 0
+            transform: translate(50%, 50%)
+            fill: $Svg-clr
+        input
+            background-color: $Secondary2-clr
+            height: 35px
+            width: 400px
+            padding-left: 30px
+            font-size: $fs-md
+            font-weight: 600
+            border-radius: 8px
+            border: $Border
+            // width: 30%
+            &:focus
+                outline: none
+    &-action
+        display: flex
+        align-items: center
+        svg
+            margin-right: 40px
+            scale: 2
+            fill: $Svg-clr
+            stroke: $Svg-clr
+            cursor: pointer
+            &:hover
+                fill: $Accent-clr
+        &-profile
+            display: flex
+            align-items: center
+            cursor: pointer
+            &:hover
+                svg
+                    stroke: $Accent-clr
+            img
+                margin-right: 10px
+                width: 40px
+                border-radius: 50px
+                border: $Border
+            svg
+                // stroke: $Svg-drk-clr
+                margin: 0
+
+// NAVBAR x SIDEBAR
+.navbar, .sidebar
+    position: sticky
+    top: 80px
+    max-height: max-content
+    height: 100%
+    margin-bottom: 0
+    z-index: 1
+// === NAVBAR ===
+.navbar
+    flex: 0 0 240px
+    padding: 15px
+    border-radius: 8px
+    &-profile
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: $Secondary2-clr
+        border: $Border
+        padding: 10px 0
+        border-radius: 8px
+        margin-bottom: 20px
+        img
+            width: 50px
+            border: $Border
+            border-radius: 8px
+            margin-right: 10px
+        &-desc
+            p:nth-child(1)
+                font-size: $fs-sm
+                font-weight: 600
+            p:nth-child(2)
+                font-size: $fs-smish
+    &-navigation
+        &-box
+            margin: 15px 0
+            display: flex
+            height: 40px
+            align-items: center
+            border-radius: 8px
+            cursor: pointer
+            &:hover
+                background-color: $Accent-clr
+                svg
+                    fill: $Svg-wht-clr
+                    stroke: $Svg-wht-clr
+                p
+                    color: $Font-white-clr
+            svg
+                scale: 1.5
+                margin: 0 15px
+            p
+                font-size: $fs-md
+                font-weight: 600
+        .active
+            background-color: $Accent-clr
+            svg
+                fill: $Svg-wht-clr
+                stroke: $Svg-wht-clr
+            p
+                color: $Font-white-clr
+// === SIDEBAR ===
+.sidebar
+    flex: 0 0 260px
+    padding: 15px
+    border-radius: 8px
+    max-height: 480px
+    overflow: hidden
+    &-header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 8px 0
+        margin-bottom: 20px
+        p
+            font-size: $fs-xl
+            font-weight: 600
+        svg
+            scale: 1.3
+            cursor: pointer
+            &:hover
+                fill: $Accent-clr
+    &-search
+        display: flex
+        position: relative
+        svg
+            position: absolute
+            top: 50%
+            left: 8px
+            transform: translateY(-50%)
+        input
+            width: 100%
+            height: 30px
+            padding-left: 25px
+            border-radius: 8px
+            background-color: $Secondary2-clr
+            border: $Border
+            &:focus
+                outline: none
+    &-filter
+        display: flex
+        margin: 20px 0
+        p
+            margin-right: 8px
+            cursor: pointer
+            font-size: $fs-sm
+            &:hover
+                color: $Accent-clr
+        .active
+            border-bottom: $Border2
+            font-weight: 600
+            color: $Accent-clr
+    &-message
+        &-box
+            display: flex
+            margin: 10px 0
+            padding: 10px 0
+            cursor: pointer
+            &:hover
+                .sidebar-message-box-desc-name
+                    color: $Accent-clr
+            img
+                width: 40px
+                border-radius: 50%
+                border: $Border
+                margin-right: 10px
+            &-desc
+                &-name
+                    font-size: $fs-md
+                    font-weight: 600
+                &-last_seen
+                    font-size: $fs-smish
+                    color: $Font-light-clr
